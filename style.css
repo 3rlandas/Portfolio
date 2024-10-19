@@ -106,12 +106,14 @@ p {
 
 .projects-row {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
     gap: 20px;
 }
 
 .project {
     display: flex;
+    
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -119,11 +121,17 @@ p {
     border-radius: 20px;
     width: 400px;
     height: 600px;
+    min-width: 400px;
+    min-height: 600px;
     padding: 50px 0 50px 0;
 }
 
-.project nav a {
-    justify-content: space-between;
+.nav-container{
+   display: flex; 
+   flex-direction: row;
+}
+.nav-container a {
+
     padding: 10px 10px;
     margin: 10px;
     font-size: 17px;
@@ -139,8 +147,8 @@ p {
 }
 
 .project p {
-    text-align: left;
-    padding: 0 50px 0 50px;
+    text-align: center;
+    padding: 0 10px 0 10px;
 }
 
 .project img {
