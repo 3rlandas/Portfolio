@@ -9,18 +9,24 @@ html {
 }
 
 .top-navigation-bar {
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    flex-wrap: wrap;
     background-color: #19212E;
     overflow: hidden;
-    padding: 0.5rem;
-    height: 70px;
+    height: 80px;
+    top: 0; /* Fixes it at the top of the page */
+    left: 0; /* Aligns it to the left */
+    right: 0; /* Aligns it to the right */
+    z-index: 1000; /* Ensures it stays above other content */
 }
 
-.top-navigation-bar a {
+.menu-toggle {
+    display: none;
+}
+
+.nav-links a {
     min-width: 100px;
     padding: 14px 16px;
     font-size: 17px;
@@ -31,7 +37,8 @@ html {
     border-radius: 50px;
 }
 
-.top-navigation-bar a:hover, .project a:hover {
+.nav-links a:hover,
+.project a:hover {
     background-color: #495057;
     color: white;
 }
@@ -48,7 +55,8 @@ html {
     display: flex;
     align-items: center;
     position: relative;
-    padding: 170px 3% 170px 10%;
+    padding: 240px 3% 170px 10%;
+    border-top: 100px;
     background-color: #E9ECEF;
 }
 
@@ -113,7 +121,6 @@ p {
 
 .project {
     display: flex;
-    
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -126,10 +133,11 @@ p {
     padding: 50px 0 50px 0;
 }
 
-.nav-container{
-   display: flex; 
-   flex-direction: row;
+.nav-container {
+    display: flex;
+    flex-direction: row;
 }
+
 .nav-container a {
 
     padding: 10px 10px;
@@ -142,7 +150,8 @@ p {
     transition: background-color 0.3s ease;
     border-radius: 50px;
 }
-.project-image{
+
+.project-image {
     border-radius: 20px;
 }
 
@@ -156,25 +165,86 @@ p {
     height: 400px;
 }
 
+.overlay-menu {
+    display: none;
+}
+
 @media (max-width: 1000px) {
-
-    .top-navigation-bar {
-        justify-content: space-evenly;
-    }
-
-    .top-navigation-bar a {
-        min-width: 60px;
-    }
 
     .top-navigation-bar img {
         display: none;
+    }
+
+    .nav-links a {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        color: white;
+        margin-right: auto;
+        cursor: pointer;
+        font-size: 2.5rem;
+        margin-left: 30px;
+    }
+
+    .overlay-menu {
+        display: flex;
+        justify-content: flex-start;
+        width: 60%;
+        transition: all .5s ease;
+        flex-direction: column;
+        position: fixed;
+        z-index: 10;
+        top: 80px;
+        min-height: 100vh;
+        box-shadow: 0px -2px 10px black;
+        backdrop-filter: blur(10px);
+        left: -100%;
+    }
+
+    .overlay-menu a, .overlay-menu div {
+        min-width: 100px;
+        padding: 14px 16px;
+        font-size: 17px;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+        transition: background-color 0.3s ease;
+        border-radius: 50px;
+    }
+
+    #open-menu {
+        left: 0%;
+    }
+
+    #close-menu {
+        left: -100%;
+    }
+
+    .overlay-content a {
+
+        min-width: 100px;
+        padding: 14px 16px;
+        font-size: 17px;
+        color: black;
+        text-decoration: none;
+        text-align: center;
+        transition: background-color 0.3s ease;
+        border-radius: 50px;
+    }
+
+    .nav-links.active {
+        display: flex;
+        justify-content: center;
+
     }
 
     .main-presentation {
         flex-direction: column;
         align-items: center;
         position: relative;
-        padding: 170x 0 170px 0;
+        padding: 170x 0px 170px 0px;
     }
 
     .main-presentation img {
