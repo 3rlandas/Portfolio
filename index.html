@@ -14,7 +14,7 @@
         <a href="#home">Home</a>
         <a href="#about-me">About Me</a>
         <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact">Contact Me</a>
       </div>
     </nav>
 
@@ -22,7 +22,7 @@
       <a href="#home">Home</a>
       <a href="#about-me">About</a>
       <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      <a href="#contact">Contact Me</a>
       <div class="close-overlay" id="close-overlay">Close</div>
     </div>
 
@@ -127,6 +127,27 @@
           </nav>
         </div>
       </div>
+    </div>
+    <div class="contact-me" id="contact">
+      <h2>Contact Me</h2>
+      <form class="form">
+        <div class="form-row">
+          <input class="text" name="user_id" placeholder="Name" />
+          <input type="email" name="user_email" placeholder="Email" />
+        </div>
+        <div class="form-subject">
+          <input type="text" name="user_subject" placeholder="Subject" />
+        </div>
+        <div class="form-message">
+          <textarea
+            type="text"
+            name="user_message"
+            placeholder="Message"
+          ></textarea>
+        </div>
+
+        <button class="sent-message">Send Message</button>
+      </form>
     </div>
     <script src="script.js"></script>
   </body>

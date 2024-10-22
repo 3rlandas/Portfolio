@@ -16,10 +16,10 @@ html {
     background-color: #19212E;
     overflow: hidden;
     height: 80px;
-    top: 0; /* Fixes it at the top of the page */
-    left: 0; /* Aligns it to the left */
-    right: 0; /* Aligns it to the right */
-    z-index: 1000; /* Ensures it stays above other content */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 .menu-toggle {
@@ -55,40 +55,44 @@ html {
     display: flex;
     align-items: center;
     position: relative;
-    padding: 240px 3% 170px 10%;
+    padding: 240px 0% 170px 10%;
     border-top: 100px;
     background-color: #E9ECEF;
 }
 
 .main-presentation img {
     width: 30%;
-    min-width: 300px;
+    min-width: 250px;
     border-radius: 50%;
 }
 
-.main-presentation .presentation-text {
+.presentation-text {
     display: flex;
     flex-direction: column;
     padding-left: 50px;
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: clamp(3rem, 5vw, 4rem);
 }
 
 h2 {
-    font-size: 30px;
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
 }
 
 p {
-    font-size: 1.3rem;
+    font-size: clamp(0.8rem, 5vw, 1.3rem);
 }
 
 .about-me {
     display: flex;
     align-items: center;
     position: relative;
-    padding: 200px 10% 200px 10%;
+    padding: 170px 10% 170px 10%;
     background-color: #DEE2E6;
     -webkit-box-shadow: 0px 0px 45px -6px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 45px -6px rgba(0, 0, 0, 0.75);
@@ -102,7 +106,7 @@ p {
     justify-content: space-between;
     background-color: #E9ECEF;
     gap: 20px;
-    padding: 200px 10% 200px 10%;
+    padding: 170px 10% 170px 10%;
 }
 
 .projects h2 {
@@ -126,10 +130,8 @@ p {
     text-align: center;
     background-color: white;
     border-radius: 20px;
-    width: 400px;
-    height: 600px;
-    min-width: 400px;
-    min-height: 600px;
+    width: 100%;
+    max-width: 400px;
     padding: 50px 0 50px 0;
 }
 
@@ -169,6 +171,75 @@ p {
     display: none;
 }
 
+.contact-me {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 170px 10% 170px 10%;
+    background-color: #DEE2E6;
+    -webkit-box-shadow: 0px 0px 45px -6px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 45px -6px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 45px -6px rgba(0, 0, 0, 0.75);
+}
+
+.contact-me h2 {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 600px;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 20px;
+}
+
+textarea[name="user_message"] {
+    height: 200px;
+}
+
+
+.form input,
+.form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.form-subject {
+    width: 100%;
+}
+
+.form-message {
+    width: 100%;
+}
+
+.contact-me button {
+    padding: 10px 10px;
+    margin: 10px;
+    font-size: 17px;
+    background-color: #19212E;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    border-radius: 50px;
+}
+
+
 @media (max-width: 1000px) {
 
     .top-navigation-bar img {
@@ -203,7 +274,8 @@ p {
         left: -100%;
     }
 
-    .overlay-menu a, .overlay-menu div {
+    .overlay-menu a,
+    .overlay-menu div {
         min-width: 100px;
         padding: 14px 16px;
         font-size: 17px;
@@ -244,7 +316,7 @@ p {
         flex-direction: column;
         align-items: center;
         position: relative;
-        padding: 170x 0px 170px 0px;
+        padding: 240px 0 170px 0;
     }
 
     .main-presentation img {
@@ -260,5 +332,33 @@ p {
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+
+    .projects {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #E9ECEF;
+        gap: 20px;
+        padding: 170px 10% 170px 10%;
+    }
+
+    .project-image {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        padding: 10px 0px 10px 0px;
+    }
+
+    .contact-me {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .form-row {
+        display: block;
+        width: 100%;
     }
 }
