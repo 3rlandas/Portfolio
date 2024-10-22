@@ -203,6 +203,7 @@ p {
     justify-content: space-between;
     width: 100%;
     font-size: 20px;
+    gap: 20px;
 }
 
 textarea[name="user_message"] {
@@ -358,7 +359,8 @@ textarea[name="user_message"] {
     }
 
     .form-row {
-        display: block;
+        flex-direction: column;
         width: 100%;
+        gap: 20px;
     }
 }
